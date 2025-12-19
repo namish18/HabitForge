@@ -85,7 +85,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
                             )}
                         >
                             <span className={styles.navIcon}>{link.icon}</span>
-                            {link.label}
+                            <span>{link.label}</span>
                         </Link>
                     ))}
                 </nav>
