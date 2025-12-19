@@ -1,0 +1,61 @@
+.statCard {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-base);
+}
+
+.statCard:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-border-hover);
+}
+
+.statHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+}
+
+.statLabel {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.statIcon {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.statValue {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.statSubtext {
+    font-size: 0.813rem;
+    color: var(--color-text-tertiary);
+}
+
+.xpProgress {
+    width: 100%;
+    height: 8px;
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-top: var(--spacing-sm);
+}
+
+.xpProgressBar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary) 0%, #ff8555 100%);
+    border-radius: var(--radius-full);
+    transition: width var(--transition-slow);
+    box-shadow: 0 0 10px var(--color-primary-glow);
+}

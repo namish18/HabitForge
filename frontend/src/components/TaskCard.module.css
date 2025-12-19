@@ -1,0 +1,77 @@
+.taskCard {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-base);
+}
+
+.taskCard:hover {
+    border-color: var(--color-border-hover);
+    transform: translateY(-2px);
+}
+
+.taskHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    marginBottom: var(--spacing-md);
+}
+
+.taskInfo {
+    flex: 1;
+}
+
+.taskTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.taskDescription {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.taskMeta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-sm);
+}
+
+.metaItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.813rem;
+    color: var(--color-text-tertiary);
+}
+
+.metaIcon {
+    color: var(--color-primary);
+}
+
+.taskActions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.completed {
+    opacity: 0.6;
+    border-left: 3px solid var(--color-success);
+}
+
+.inProgress {
+    border-left: 3px solid var(--color-primary);
+}
+
+.todo {
+    border-left: 3px solid var(--color-text-tertiary);
+}

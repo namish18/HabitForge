@@ -1,0 +1,133 @@
+.page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.seasonInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+}
+
+.leaderboardTable {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.leaderboardRow {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.leaderboardRow:hover {
+    background: var(--color-bg-tertiary);
+    transform: translateX(4px);
+}
+
+.rank {
+    width: 60px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gold {
+    color: #ffd700;
+}
+
+.silver {
+    color: #c0c0c0;
+}
+
+.bronze {
+    color: #cd7f32;
+}
+
+.rankNumber {
+    color: var(--color-text-tertiary);
+    font-size: 1.25rem;
+}
+
+.userInfo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #ff8555 100%);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.userName {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.stats {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.statItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.statIcon {
+    color: var(--color-primary);
+}
+
+.statValue {
+    font-size: 0.938rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+    .stats {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .leaderboardRow {
+        gap: var(--spacing-md);
+    }
+}
