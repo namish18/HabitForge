@@ -86,6 +86,31 @@ export const QuestCard: React.FC<QuestCardProps> = ({ quest }) => {
                 </div>
             )}
 
+            {/* Participants */}
+            {quest.participants && quest.participants.length > 0 && (
+                <div className={styles.participants}>
+                    <p className={styles.participantsLabel}>
+                        {quest.participants.length} {quest.participants.length === 1 ? 'person is' : 'people are'} also doing this quest
+                    </p>
+                    <div className={styles.participantAvatars}>
+                        {quest.participants.slice(0, 5).map((participant) => (
+                            <div
+                                key={participant.userId}
+                                className={styles.participantAvatar}
+                                title={participant.userName}
+                            >
+                                {participant.userAvatar}
+                            </div>
+                        ))}
+                        {quest.participants.length > 5 && (
+                            <div className={styles.participantAvatar}>
+                                +{quest.participants.length - 5}
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
+
             {/* Steps */}
             <div className={styles.steps}>
                 {quest.steps.map((step) => (

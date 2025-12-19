@@ -15,7 +15,18 @@
     top: 0;
     height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
     z-index: var(--z-fixed);
+    transition: width 0.3s ease;
+}
+
+.sidebarCollapsed {
+    width: 70px;
+}
+
+.sidebarCollapsed .logo span,
+.sidebarCollapsed .navLink {
+    white-space: nowrap;
 }
 
 .sidebarHeader {
@@ -82,9 +93,14 @@
 
 .main {
     flex: 1;
-    margin-left: 260px;
+    margin-left: 70px;
     display: flex;
     flex-direction: column;
+    transition: margin-left 0.3s ease;
+}
+
+.shell:has(.sidebar:not(.sidebarCollapsed)) .main {
+    margin-left: 260px;
 }
 
 .topbar {
@@ -193,22 +209,89 @@
     overflow-y: auto;
 }
 
+.content {
+    flex: 1;
+    padding: var(--spacing-xl);
+    overflow-y: auto;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: calc(var(--z-fixed) - 1);
+    animation: fadeIn 0.2s ease-out;
+}
+
+.mobileMenuButton {
+    display: none;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: 1.25rem;
+    margin-right: var(--spacing-sm);
+}
+
+.mobileMenuButton:hover {
+    background: var(--color-bg-elevated);
+}
+
 /* Responsive */
+@media (max-width: 1024px) {
+    .sidebarCollapsed:not(.sidebarOpen) {
+        width: 260px;
+    }
+
+    .shell:has(.sidebar:not(.sidebarCollapsed)) .main {
+        margin-left: 70px;
+    }
+}
+
 @media (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);
         transition: transform var(--transition-base);
+        width: 260px !important;
     }
 
     .sidebarOpen {
         transform: translateX(0);
     }
 
+    .sidebarCollapsed {
+        width: 260px;
+    }
+
     .main {
-        margin-left: 0;
+        margin-left: 0 !important;
+    }
+
+    .mobileMenuButton {
+        display: flex;
     }
 
     .search {
-        width: 200px;
+        width: 100%;
+        max-width: none;
+    }
+
+    .topbarRight {
+        gap: var(--spacing-sm);
+    }
+
+    .topbarRight .userName {
+        display: none;
+    }
+
+    .content {
+        padding: var(--spacing-md);
     }
 }

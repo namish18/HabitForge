@@ -61,6 +61,74 @@ export default function Dashboard() {
                     />
                 </div>
 
+                {/* Incomplete Tasks */}
+                <section className={styles.section}>
+                    <h2 className={styles.sectionTitle}>Tasks to Complete</h2>
+                    <p className={styles.sectionSubtitle}>
+                        Your pending tasks and priorities
+                    </p>
+                    <div className={styles.tasksList}>
+                        {useAppStore.getState().tasks
+                            .filter((task) => task.status !== 'completed')
+                            .slice(0, 5)
+                            .map((task) => (
+                                <div key={task.id} className={styles.taskItem}>
+                                    <div className={styles.taskInfo}>
+                                        <h4 className={styles.taskTitle}>{task.title}</h4>
+                                        {task.description && (
+                                            <p className={styles.taskDescription}>{task.description}</p>
+                                        )}
+                                    </div>
+                                    <div className={styles.taskMeta}>
+                                        <span className={`${styles.taskPriority} ${styles[`priority${task.priority.charAt(0).toUpperCase()}${task.priority.slice(1)}`]}`}>
+                                            {task.priority}
+                                        </span>
+                                        {task.project && (
+                                            <span className={styles.taskProject}>{task.project}</span>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        {useAppStore.getState().tasks.filter((task) => task.status !== 'completed').length === 0 && (
+                            <div className={styles.emptyState}>
+                                <p>All tasks completed! Great job!</p>
+                            </div>
+                        )}
+                    </div>
+                </section>
+
+                {/* Participating Quests */}
+                <section className={styles.section}>
+                    <h2 className={styles.sectionTitle}>Your Active Quests</h2>
+                    <p className={styles.sectionSubtitle}>
+                        Quests you're currently working on
+                    </p>
+                    <div className={styles.questsList}>
+                        {useAppStore.getState().quests
+                            .filter((quest) => quest.status === 'active')
+                            .map((quest) => (
+                                <div key={quest.id} className={styles.questItem}>
+                                    <div className={styles.questHeader}>
+                                        <h4 className={styles.questTitle}>{quest.title}</h4>
+                                        <span className={styles.questProgress}>{quest.progress}%</span>
+                                    </div>
+                                    <div className={styles.questProgressBar}>
+                                        <div
+                                            className={styles.questProgressFill}
+                                            style={{ width: `${quest.progress}%` }}
+                                        />
+                                    </div>
+                                    <p className={styles.questDescription}>{quest.description}</p>
+                                </div>
+                            ))}
+                        {useAppStore.getState().quests.filter((quest) => quest.status === 'active').length === 0 && (
+                            <div className={styles.emptyState}>
+                                <p>No active quests. Start one from the Quests page!</p>
+                            </div>
+                        )}
+                    </div>
+                </section>
+
                 {/* Do Now Queue */}
                 <section className={styles.section}>
                     <h2 className={styles.sectionTitle}>Do Now</h2>

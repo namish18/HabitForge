@@ -20,6 +20,8 @@ import {
     FiSearch,
     FiPlus,
     FiBell,
+    FiMenu,
+    FiX,
 } from 'react-icons/fi';
 import { Button } from '../ui/Button';
 
@@ -50,11 +52,21 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
     const pathname = usePathname();
     const user = useAppStore((state) => state.user);
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [isCollapsed, setIsCollapsed] = useState(true);
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
         <div className={styles.shell}>
             {/* Sidebar */}
-            <aside className={clsx(styles.sidebar, sidebarOpen && styles.sidebarOpen)}>
+            <aside
+                className={clsx(
+                    styles.sidebar,
+                    sidebarOpen && styles.sidebarOpen,
+                    isCollapsed && !isHovered && styles.sidebarCollapsed
+                )}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
                 <div className={styles.sidebarHeader}>
                     <div className={styles.logo}>
                         <div className={styles.logoIcon}>HF</div>
@@ -79,11 +91,25 @@ export const AppShell: React.FC<AppShellProps> = ({ children }) => {
                 </nav>
             </aside>
 
+            {/* Mobile Overlay */}
+            {sidebarOpen && (
+                <div
+                    className={styles.overlay}
+                    onClick={() => setSidebarOpen(false)}
+                />
+            )}
+
             {/* Main Content */}
             <div className={styles.main}>
                 {/* Topbar */}
                 <header className={styles.topbar}>
                     <div className={styles.topbarLeft}>
+                        <button
+                            className={styles.mobileMenuButton}
+                            onClick={() => setSidebarOpen(!sidebarOpen)}
+                        >
+                            {sidebarOpen ? <FiX /> : <FiMenu />}
+                        </button>
                         <input
                             type="text"
                             placeholder="Search habits, tasks, quests..."

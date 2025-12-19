@@ -146,3 +146,42 @@
     border-radius: var(--radius-full);
     transition: width var(--transition-slow);
 }
+
+.participants {
+    padding: var(--spacing-md);
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.participantsLabel {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.participantAvatars {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+.participantAvatar {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #ff8555 100%);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 2px solid var(--color-bg-secondary);
+    transition: transform var(--transition-fast);
+}
+
+.participantAvatar:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}

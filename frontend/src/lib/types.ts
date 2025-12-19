@@ -131,6 +131,12 @@ export interface Quest {
         maxHealth: number;
     };
     status: 'locked' | 'active' | 'completed';
+    participants?: {
+        userId: string;
+        userName: string;
+        userAvatar: string;
+        joinedAt: string;
+    }[];
 }
 
 export interface Achievement {

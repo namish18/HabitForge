@@ -4,7 +4,7 @@ import { AppShell } from '@/components/layout/AppShell';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { useAppStore } from '@/store/useAppStore';
-import { FiTrophy, FiZap, FiAward } from 'react-icons/fi';
+import { FiZap, FiAward } from 'react-icons/fi';
 import styles from './leaderboard.module.css';
 
 export default function LeaderboardPage() {
@@ -34,7 +34,7 @@ export default function LeaderboardPage() {
                                 <div key={entry.userId} className={styles.leaderboardRow}>
                                     <div className={styles.rank}>
                                         {entry.rank === 1 && <span className={styles.gold}>
-                                            <FiTrophy />
+                                            <FiAward />
                                         </span>}
                                         {entry.rank === 2 && <span className={styles.silver}>
                                             <FiAward />

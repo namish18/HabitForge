@@ -321,6 +321,26 @@ export const mockQuests: Quest[] = [
             health: 700,
             maxHealth: 1000,
         },
+        participants: [
+            {
+                userId: 'user-2',
+                userName: 'Emma Wilson',
+                userAvatar: '🎨',
+                joinedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
+            },
+            {
+                userId: 'user-3',
+                userName: 'Mike Chen',
+                userAvatar: '⚡',
+                joinedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+            },
+            {
+                userId: 'user-5',
+                userName: 'Sarah Johnson',
+                userAvatar: '🌟',
+                joinedAt: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000).toISOString(),
+            },
+        ],
         status: 'active',
     },
     {
