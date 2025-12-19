@@ -185,6 +185,25 @@ export interface LeaderboardEntry {
     streakDays: number;
 }
 
+export interface AccountabilityPartner {
+    userId: string;
+    userName: string;
+    userAvatar: string;
+    addedAt: string;
+    sharedHabits: string[]; // habit IDs shared with this partner
+    streakDays: number;
+}
+
+export interface AccountabilityInvitation {
+    id: string;
+    fromUserId: string;
+    fromUserName: string;
+    fromUserAvatar: string;
+    toUserId: string;
+    status: 'pending' | 'accepted' | 'rejected';
+    createdAt: string;
+}
+
 export type FocusMode = 'pomodoro' | 'deep-work' | 'flow';
 
 export interface FocusSession {
@@ -238,4 +257,6 @@ export interface AppState {
     journalEntries: JournalEntry[];
     currentSeason: Season;
     cosmetics: Cosmetic[];
+    accountabilityPartners: AccountabilityPartner[];
+    accountabilityInvitations: AccountabilityInvitation[];
 }

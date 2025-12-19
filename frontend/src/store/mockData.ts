@@ -664,3 +664,28 @@ export const mockJournalEntries: JournalEntry[] = [
         tags: ['awareness', 'behavior-change'],
     },
 ];
+
+// Mock Accountability Partners Data
+export const mockAccountabilityPartners: import('../lib/types').AccountabilityPartner[] = [
+    {
+        userId: 'user-2',
+        userName: 'Emma Wilson',
+        userAvatar: '🎨',
+        addedAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(),
+        sharedHabits: ['habit-1', 'habit-2'],
+        streakDays: 12,
+    },
+];
+
+// Mock Accountability Invitations Data
+export const mockAccountabilityInvitations: import('../lib/types').AccountabilityInvitation[] = [
+    {
+        id: 'inv-1',
+        fromUserId: 'user-5',
+        fromUserName: 'Sarah Johnson',
+        fromUserAvatar: '🌟',
+        toUserId: 'user-1',
+        status: 'pending',
+        createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
+    },
+];

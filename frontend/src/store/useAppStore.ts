@@ -22,6 +22,8 @@ import {
     mockCosmetics,
     mockFocusSessions,
     mockJournalEntries,
+    mockAccountabilityPartners,
+    mockAccountabilityInvitations,
 } from './mockData';
 
 interface AppStore extends AppState {
@@ -62,6 +64,12 @@ interface AppStore extends AppState {
     // Achievement actions
     claimAchievement: (achievementId: string) => void;
 
+    // Accountability actions
+    sendAccountabilityInvite: (toUserId: string, toUserName: string, toUserAvatar: string) => void;
+    acceptAccountabilityInvite: (invitationId: string) => void;
+    rejectAccountabilityInvite: (invitationId: string) => void;
+    removeAccountabilityPartner: (partnerId: string) => void;
+
     // Utility actions
     resetData: () => void;
 }
@@ -78,6 +86,8 @@ const initialState: AppState = {
     journalEntries: mockJournalEntries,
     currentSeason: mockSeason,
     cosmetics: mockCosmetics,
+    accountabilityPartners: mockAccountabilityPartners,
+    accountabilityInvitations: mockAccountabilityInvitations,
 };
 
 export const useAppStore = create<AppStore>()(
@@ -364,6 +374,88 @@ export const useAppStore = create<AppStore>()(
                 get().earnCoins(50);
             },
 
+            // Accountability actions
+            sendAccountabilityInvite: (toUserId: string, toUserName: string, toUserAvatar: string) => {
+                // Check if already partners
+                const existingPartner = get().accountabilityPartners.find(p => p.userId === toUserId);
+                if (existingPartner) {
+                    console.log('Already partners with this user');
+                    return;
+                }
+
+                // Check if already invited
+                const existingInvite = get().accountabilityInvitations.find(
+                    inv => inv.toUserId === toUserId && inv.status === 'pending'
+                );
+                if (existingInvite) {
+                    console.log('Already sent invite to this user');
+                    return;
+                }
+
+                // Check partner limit
+                if (get().accountabilityPartners.length >= 3) {
+                    console.log('Maximum 3 accountability partners allowed');
+                    return;
+                }
+
+                const newInvitation: import('../lib/types').AccountabilityInvitation = {
+                    id: `inv-${Date.now()}`,
+                    fromUserId: get().user.id,
+                    fromUserName: get().user.name,
+                    fromUserAvatar: get().user.avatar,
+                    toUserId,
+                    status: 'pending',
+                    createdAt: new Date().toISOString(),
+                };
+
+                set(state => ({
+                    accountabilityInvitations: [...state.accountabilityInvitations, newInvitation],
+                }));
+            },
+
+            acceptAccountabilityInvite: (invitationId: string) => {
+                const invitation = get().accountabilityInvitations.find(inv => inv.id === invitationId);
+                if (!invitation) return;
+
+                // Check partner limit
+                if (get().accountabilityPartners.length >= 3) {
+                    console.log('Maximum 3 accountability partners allowed');
+                    return;
+                }
+
+                // Create new partner
+                const newPartner: import('../lib/types').AccountabilityPartner = {
+                    userId: invitation.fromUserId,
+                    userName: invitation.fromUserName,
+                    userAvatar: invitation.fromUserAvatar,
+                    addedAt: new Date().toISOString(),
+                    sharedHabits: [],
+                    streakDays: 0,
+                };
+
+                // Update invitation status and add partner
+                set(state => ({
+                    accountabilityInvitations: state.accountabilityInvitations.map(inv =>
+                        inv.id === invitationId ? { ...inv, status: 'accepted' as const } : inv
+                    ),
+                    accountabilityPartners: [...state.accountabilityPartners, newPartner],
+                }));
+            },
+
+            rejectAccountabilityInvite: (invitationId: string) => {
+                set(state => ({
+                    accountabilityInvitations: state.accountabilityInvitations.map(inv =>
+                        inv.id === invitationId ? { ...inv, status: 'rejected' as const } : inv
+                    ),
+                }));
+            },
+
+            removeAccountabilityPartner: (partnerId: string) => {
+                set(state => ({
+                    accountabilityPartners: state.accountabilityPartners.filter(p => p.userId !== partnerId),
+                }));
+            },
+
             // Utility
             resetData: () => {
                 set(initialState);
@@ -379,6 +471,8 @@ export const useAppStore = create<AppStore>()(
                 achievements: state.achievements,
                 focusSessions: state.focusSessions,
                 journalEntries: state.journalEntries,
+                accountabilityPartners: state.accountabilityPartners,
+                accountabilityInvitations: state.accountabilityInvitations,
             }),
         }
     )

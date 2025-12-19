@@ -1,0 +1,319 @@
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+}
+
+.limitNotice {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: rgba(234, 179, 8, 0.15);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    border-radius: var(--radius-md);
+    color: #eab308;
+    font-size: 0.938rem;
+    margin-bottom: var(--spacing-xl);
+}
+
+.section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.invitationsList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.invitationCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+}
+
+.invitationUser {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex: 1;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #ff8555 100%);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.invitationName {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.invitationMessage {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.invitationActions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.partnersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.partnerCard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.partnerHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.partnerInfo {
+    flex: 1;
+}
+
+.partnerName {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.partnerStats {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.partnerMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--color-border);
+}
+
+.partnerSince {
+    font-size: 0.813rem;
+    color: var(--color-text-tertiary);
+}
+
+.removeButton {
+    width: 100%;
+    margin-top: var(--spacing-sm);
+}
+
+.emptyState {
+    text-align: center;
+    padding: var(--spacing-2xl);
+}
+
+.emptyIcon {
+    font-size: 4rem;
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.emptyState h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.emptyState p {
+    font-size: 0.938rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sentInvitesList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.sentInviteItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+}
+
+.sentInviteItem .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 1.125rem;
+}
+
+.sentInviteName {
+    flex: 1;
+    font-size: 0.938rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.inviteDialog {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.dialogDescription {
+    font-size: 0.938rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.usersList {
+    max-height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.userItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-bg-elevated);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.userItem:hover {
+    background: var(--glass-bg);
+    border-color: var(--color-border-hover);
+}
+
+.userItemSelected {
+    background: rgba(255, 107, 53, 0.15);
+    border-color: var(--color-primary);
+}
+
+.userItem .avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+}
+
+.userDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.userItemName {
+    font-size: 0.938rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.userItemStats {
+    font-size: 0.813rem;
+    color: var(--color-text-secondary);
+}
+
+.checkIcon {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+}
+
+.noUsers {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--color-text-secondary);
+    font-size: 0.938rem;
+}
+
+.dialogActions {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: flex-end;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .partnersGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .invitationCard {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .invitationActions {
+        width: 100%;
+    }
+
+    .invitationActions button {
+        flex: 1;
+    }
+}
