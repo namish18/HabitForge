@@ -10,7 +10,7 @@ import {
     FiCheck,
     FiX,
     FiVolume2,
-    FiVibrate,
+    FiSmartphone,
     FiMoon,
     FiMapPin,
     FiClock,
@@ -183,7 +183,7 @@ export default function NotificationsSettingsPage() {
 
                                 <div className={styles.preferenceItem}>
                                     <div className={styles.preferenceLabel}>
-                                        <FiVibrate />
+                                        <FiSmartphone />
                                         <div>
                                             <h4>Vibration</h4>
                                             <p>Vibrate on notification (mobile)</p>
@@ -281,7 +281,7 @@ export default function NotificationsSettingsPage() {
                                             <h4>{habit.title}</h4>
                                             <div className={styles.reminderTime}>
                                                 <FiClock />
-                                                <span>Daily at {habit.reminders?.[0] || '09:00'}</span>
+                                                <span>Daily at 09:00</span>
                                             </div>
                                         </div>
                                         <Badge variant="success">Active</Badge>
