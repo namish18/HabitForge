@@ -1,0 +1,49 @@
+{
+  "name": "HabitForge",
+  "short_name": "HabitForge",
+  "description": "Gamified Productivity & Habit Tracking Platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0b",
+  "theme_color": "#ff6b35",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Add Habit",
+      "short_name": "New Habit",
+      "description": "Create a new habit",
+      "url": "/habits?action=new",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Focus Session",
+      "short_name": "Focus",
+      "description": "Start a focus session",
+      "url": "/focus",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View your dashboard",
+      "url": "/dashboard",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "categories": ["productivity", "lifestyle", "health"],
+  "screenshots": []
+}

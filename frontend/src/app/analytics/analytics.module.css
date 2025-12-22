@@ -1,0 +1,234 @@
+.page {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+}
+
+.headerActions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-2xl);
+    gap: var(--spacing-lg);
+}
+
+.tabs {
+    display: flex;
+    gap: var(--spacing-xs);
+    background: var(--color-bg-elevated);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-lg);
+}
+
+.tab {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    font-size: 0.938rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-transform: capitalize;
+}
+
+.tab:hover {
+    color: var(--color-text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tabActive {
+    background: var(--color-bg-secondary);
+    color: var(--color-primary);
+}
+
+.timeRangeSelector {
+    display: flex;
+    gap: var(--spacing-xs);
+    background: var(--color-bg-elevated);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-lg);
+}
+
+.rangeButton {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    font-size: 0.813rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.rangeButton:hover {
+    color: var(--color-text-primary);
+}
+
+.rangeButtonActive {
+    background: var(--color-primary);
+    color: white;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.statCard {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.statIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #ff8555 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.statContent {
+    flex: 1;
+}
+
+.statLabel {
+    font-size: 0.875rem;
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.statValue {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.statChange {
+    font-size: 0.813rem;
+    color: var(--color-text-secondary);
+}
+
+.chartContainer {
+    min-height: 300px;
+    padding: var(--spacing-md) 0;
+}
+
+.heatmapContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+.habitHeatmap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.habitName {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.emptyState {
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.emptyIcon {
+    font-size: 4rem;
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.emptyState h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.emptyState p {
+    font-size: 0.938rem;
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 1024px) {
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tabs {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .tabs {
+        justify-content: space-between;
+    }
+
+    .tab {
+        flex: 1;
+        padding: var(--spacing-sm);
+        font-size: 0.813rem;
+    }
+
+    .timeRangeSelector {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .rangeButton {
+        flex: 1;
+    }
+}

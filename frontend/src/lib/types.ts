@@ -230,6 +230,87 @@ export interface HabitPrediction {
     insights: string[];
 }
 
+export interface NotificationRule {
+    id: string;
+    habitId: string;
+    enabled: boolean;
+    triggers: ContextTrigger[];
+    message: string;
+    quietHours?: { start: string; end: string };
+    createdAt: string;
+}
+
+export interface ContextTrigger {
+    type: 'time' | 'location' | 'calendar' | 'weather';
+    value: string;
+    conditions?: Record<string, any>;
+}
+
+export interface NotificationPreferences {
+    enabled: boolean;
+    quietHours: { start: string; end: string };
+    soundEnabled: boolean;
+    vibrationEnabled: boolean;
+    badgeEnabled: boolean;
+    contextAware: boolean;
+}
+
+export interface Guild {
+    id: string;
+    name: string;
+    description: string;
+    avatar: string;
+    bannerImage?: string;
+    createdBy: string;
+    createdAt: string;
+    members: GuildMember[];
+    maxMembers: number;
+    isPublic: boolean;
+    totalXP: number;
+    level: number;
+    season: string;
+}
+
+export interface GuildMember {
+    userId: string;
+    userName: string;
+    userAvatar: string;
+    role: 'owner' | 'admin' | 'member';
+    joinedAt: string;
+    contributedXP: number;
+    streakDays: number;
+}
+
+export interface GuildChallenge {
+    id: string;
+    guildId: string;
+    title: string;
+    description: string;
+    type: 'collective' | 'competitive' | 'collaborative';
+    goal: number;
+    currentProgress: number;
+    startDate: string;
+    endDate: string;
+    rewards: {
+        xp: number;
+        coins: number;
+        badge?: string;
+    };
+    participants: string[];
+}
+
+export interface GuildInvitation {
+    id: string;
+    guildId: string;
+    guildName: string;
+    guildAvatar: string;
+    fromUserId: string;
+    fromUserName: string;
+    toUserId: string;
+    status: 'pending' | 'accepted' | 'rejected';
+    createdAt: string;
+}
+
 export type FocusMode = 'pomodoro' | 'deep-work' | 'flow';
 
 export interface FocusSession {
@@ -287,4 +368,8 @@ export interface AppState {
     accountabilityInvitations: AccountabilityInvitation[];
     aiInsights: AIInsight[];
     habitPredictions: HabitPrediction[];
+    notificationRules: NotificationRule[];
+    notificationPreferences: NotificationPreferences;
+    guilds: Guild[];
+    guildInvitations: GuildInvitation[];
 }

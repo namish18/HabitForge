@@ -1,0 +1,306 @@
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+}
+
+.section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.permissionSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+}
+
+.permissionInfo {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    flex: 1;
+}
+
+.permissionIcon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--color-primary) 0%, #ff8555 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.permissionTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.permissionStatus {
+    font-size: 0.938rem;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.warning {
+    font-size: 0.875rem;
+    color: var(--color-warning);
+    margin-top: var(--spacing-xs);
+}
+
+.permissionActions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.preferencesList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.preferenceItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-md);
+}
+
+.preferenceLabel {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+    flex: 1;
+}
+
+.preferenceLabel svg {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.preferenceLabel h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.preferenceLabel p {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.toggle {
+    width: 48px;
+    height: 26px;
+    background: var(--color-bg-secondary);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-full);
+    position: relative;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    flex-shrink: 0;
+}
+
+.toggle:hover {
+    border-color: var(--color-border-hover);
+}
+
+.toggleThumb {
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: var(--radius-full);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: all var(--transition-base);
+}
+
+.toggleActive {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.toggleActive .toggleThumb {
+    left: calc(100% - 22px);
+}
+
+.quietHours {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.quietHoursInfo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--color-text-secondary);
+    font-size: 0.938rem;
+}
+
+.quietHoursInfo svg {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
+.timeInputs {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.timeInput {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.timeInput label {
+    font-size: 0.813rem;
+    font-weight: 600;
+    color: var(--color-text-tertiary);
+}
+
+.timeInput input[type='time'] {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: 0.938rem;
+    font-family: inherit;
+}
+
+.timeSeparator {
+    font-size: 0.938rem;
+    color: var(--color-text-tertiary);
+    margin-top: 20px;
+}
+
+.habitsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.habitReminder {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+}
+
+.habitInfo {
+    flex: 1;
+}
+
+.habitInfo h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.reminderTime {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.reminderTime svg {
+    color: var(--color-primary);
+}
+
+.pwaInfo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.pwaIcon {
+    font-size: 2rem;
+    color: var(--color-success);
+}
+
+.pwaInfo h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.pwaInfo p {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+    .permissionSection {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .permissionActions {
+        width: 100%;
+    }
+
+    .permissionActions button {
+        flex: 1;
+    }
+
+    .timeInputs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .timeSeparator {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .habitsGrid {
+        grid-template-columns: 1fr;
+    }
+}

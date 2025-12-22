@@ -1,14 +1,14 @@
-# 🌟 DreamFlow - Gamified Productivity & Habit Tracking Platform
+# 🌟 HabitForge - Gamified Productivity & Habit Tracking Platform
 
 > **Transform your habits into achievements with an engaging, game-like experience**
 
-DreamFlow is a comprehensive productivity application that combines habit tracking, task management, quest systems, and social accountability features to help users build better habits and achieve their goals.
+HabitForge is a comprehensive productivity application that combines habit tracking, task management, quest systems, and social accountability features to help users build better habits and achieve their goals.
 
 ---
 
 ## 🎯 Core Philosophy
 
-Built on the principles of **Atomic Habits** by James Clear, DreamFlow gamifies personal development through:
+Built on the principles of **Atomic Habits** by James Clear, HabitForge gamifies personal development through:
 - **Cue**: Smart reminders and context-aware notifications
 - **Craving**: XP, coins, achievements, and visual progress
 - **Response**: Frictionless habit completion with 2-minute versions
@@ -422,7 +422,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## 🎯 Feature Highlights
 
-### ✨ What Makes DreamFlow Unique
+### ✨ What Makes HabitForge Unique
 
 1. **科学-Backed**: Built on Atomic Habits principles
 2. **Gamified**: XP, coins, achievements, and quests
@@ -580,7 +580,7 @@ MIT License - Feel free to use and modify
 
 ## 🚀 Let's Build Better Habits Together!
 
-DreamFlow transforms personal development into an engaging journey. Start your transformation today! 🌟
+HabitForge transforms personal development into an engaging journey. Start your transformation today! 🌟
 
 **Made with ❤️ for productivity enthusiasts**
 
