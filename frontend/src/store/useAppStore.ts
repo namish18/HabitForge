@@ -26,6 +26,8 @@ import {
     mockAccountabilityInvitations,
 } from './mockData';
 import { mockAIInsights, mockHabitPredictions } from './mockAIData';
+import { mockNotificationPreferences, mockNotificationRules } from './mockNotificationData';
+import { mockGuilds, mockGuildInvitations } from './mockGuildData';
 
 interface AppStore extends AppState {
     // Habit actions
@@ -97,6 +99,10 @@ const initialState: AppState = {
     accountabilityInvitations: mockAccountabilityInvitations,
     aiInsights: mockAIInsights,
     habitPredictions: mockHabitPredictions,
+    notificationRules: mockNotificationRules,
+    notificationPreferences: mockNotificationPreferences,
+    guilds: mockGuilds,
+    guildInvitations: mockGuildInvitations,
 };
 
 export const useAppStore = create<AppStore>()(
@@ -512,6 +518,12 @@ export const useAppStore = create<AppStore>()(
                 journalEntries: state.journalEntries,
                 accountabilityPartners: state.accountabilityPartners,
                 accountabilityInvitations: state.accountabilityInvitations,
+                aiInsights: state.aiInsights,
+                habitPredictions: state.habitPredictions,
+                notificationRules: state.notificationRules,
+                notificationPreferences: state.notificationPreferences,
+                guilds: state.guilds,
+                guildInvitations: state.guildInvitations,
             }),
         }
     )

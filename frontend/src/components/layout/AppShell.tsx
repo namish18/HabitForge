@@ -22,6 +22,8 @@ import {
     FiBell,
     FiMenu,
     FiX,
+    FiZap,
+    FiShield,
 } from 'react-icons/fi';
 import { Button } from '../ui/Button';
 
@@ -38,6 +40,8 @@ const navLinks: NavLinkItem[] = [
     { href: '/quests', label: 'Quests', icon: <FiCompass /> },
     { href: '/leaderboard', label: 'Leaderboard', icon: <FiTrendingUp /> },
     { href: '/focus', label: 'Focus', icon: <FiCrosshair /> },
+    { href: '/insights', label: 'Insights', icon: <FiZap /> },
+    { href: '/guilds', label: 'Guilds', icon: <FiShield /> },
     { href: '/accountability', label: 'Accountability', icon: <FiUsers /> },
     { href: '/analytics', label: 'Analytics', icon: <FiBarChart2 /> },
     { href: '/profile', label: 'Profile', icon: <FiUser /> },

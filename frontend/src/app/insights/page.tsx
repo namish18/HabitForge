@@ -1,12 +1,11 @@
 'use client';
 
 import { AppShell } from '@/components/layout/AppShell';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { useAppStore } from '@/store/useAppStore';
 import {
-    FiBrain,
     FiZap,
     FiAlertTriangle,
     FiClock,
@@ -40,7 +39,7 @@ export default function InsightsPage() {
             case 'optimization':
                 return <FiTrendingUp />;
             default:
-                return <FiBrain />;
+                return <FiZap />;
         }
     };
 
@@ -82,13 +81,13 @@ export default function InsightsPage() {
                 <header className={styles.header}>
                     <div>
                         <h1 className={styles.title}>
-                            <FiBrain /> AI Insights
+                            <FiZap /> AI Insights
                         </h1>
                         <p className={styles.subtitle}>
                             Personalized recommendations powered by your habit data
                         </p>
                     </div>
-                    <Button icon={<FiBrain />} onClick={generateInsights}>
+                    <Button icon={<FiZap />} onClick={generateInsights}>
                         Refresh Insights
                     </Button>
                 </header>
@@ -202,13 +201,13 @@ export default function InsightsPage() {
                     <Card>
                         <CardContent>
                             <div className={styles.emptyState}>
-                                <FiBrain className={styles.emptyIcon} />
+                                <FiZap className={styles.emptyIcon} />
                                 <h3>No New Insights</h3>
                                 <p>
                                     Keep tracking your habits and we'll generate personalized
                                     recommendations based on your patterns.
                                 </p>
-                                <Button icon={<FiBrain />} onClick={generateInsights}>
+                                <Button icon={<FiZap />} onClick={generateInsights}>
                                     Generate Insights
                                 </Button>
                             </div>
