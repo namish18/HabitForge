@@ -1,0 +1,221 @@
+.page {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+}
+
+.section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.invitesList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.inviteCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.inviteInfo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex: 1;
+}
+
+.guildAvatar {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #ff8555 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.guildName {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.inviteFrom {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.inviteActions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.guildsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.guildCard {
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.guildCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.15);
+}
+
+.guildHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.guildCardName {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.guildDescription {
+    font-size: 0.938rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+}
+
+.guildStats {
+    display: flex;
+    gap: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.stat svg {
+    color: var(--color-primary);
+}
+
+.joinButton {
+    width: 100%;
+    margin-top: var(--spacing-md);
+}
+
+.infoSection {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+}
+
+.infoIcon {
+    font-size: 3rem;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.infoSection h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.benefitsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.benefitsList li {
+    font-size: 0.938rem;
+    color: var(--color-text-secondary);
+    padding-left: var(--spacing-lg);
+    position: relative;
+}
+
+.benefitsList li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-success);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .guildsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .inviteCard {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .inviteActions {
+        width: 100%;
+    }
+
+    .inviteActions button {
+        flex: 1;
+    }
+}
