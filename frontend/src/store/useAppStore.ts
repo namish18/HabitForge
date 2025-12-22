@@ -25,6 +25,7 @@ import {
     mockAccountabilityPartners,
     mockAccountabilityInvitations,
 } from './mockData';
+import { mockAIInsights, mockHabitPredictions } from './mockAIData';
 
 interface AppStore extends AppState {
     // Habit actions
@@ -70,6 +71,12 @@ interface AppStore extends AppState {
     rejectAccountabilityInvite: (invitationId: string) => void;
     removeAccountabilityPartner: (partnerId: string) => void;
 
+    // AI Insights actions
+    generateInsights: () => void;
+    acceptInsight: (insightId: string) => void;
+    dismissInsight: (insightId: string) => void;
+    getPredictionForHabit: (habitId: string) => import('../lib/types').HabitPrediction | undefined;
+
     // Utility actions
     resetData: () => void;
 }
@@ -88,6 +95,8 @@ const initialState: AppState = {
     cosmetics: mockCosmetics,
     accountabilityPartners: mockAccountabilityPartners,
     accountabilityInvitations: mockAccountabilityInvitations,
+    aiInsights: mockAIInsights,
+    habitPredictions: mockHabitPredictions,
 };
 
 export const useAppStore = create<AppStore>()(
@@ -454,6 +463,36 @@ export const useAppStore = create<AppStore>()(
                 set(state => ({
                     accountabilityPartners: state.accountabilityPartners.filter(p => p.userId !== partnerId),
                 }));
+            },
+
+            // AI Insights actions
+            generateInsights: () => {
+                // In production, this would call ML API
+                // For now, regenerate mock insights
+                set({ aiInsights: mockAIInsights });
+            },
+
+            acceptInsight: (insightId: string) => {
+                set(state => ({
+                    aiInsights: state.aiInsights.map(insight =>
+                        insight.id === insightId ? { ...insight, status: 'accepted' as const } : insight
+                    ),
+                }));
+
+                // Could trigger applying the recommendation here
+                // e.g., update habit timing, create habit stack, etc.
+            },
+
+            dismissInsight: (insightId: string) => {
+                set(state => ({
+                    aiInsights: state.aiInsights.map(insight =>
+                        insight.id === insightId ? { ...insight, status: 'dismissed' as const } : insight
+                    ),
+                }));
+            },
+
+            getPredictionForHabit: (habitId: string) => {
+                return get().habitPredictions.find(pred => pred.habitId === habitId);
             },
 
             // Utility

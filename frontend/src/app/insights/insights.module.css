@@ -1,0 +1,426 @@
+.page {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+}
+
+.alertBanner {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius-lg);
+    color: var(--color-error);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.alertBanner svg {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.alertBanner h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.alertBanner p {
+    font-size: 0.938rem;
+    opacity: 0.9;
+}
+
+.section {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.insightsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.insightCard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.insightHeader {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.insightIcon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    flex-shrink: 0;
+}
+
+.iconblue {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+}
+
+.iconpurple {
+    background: rgba(168, 85, 247, 0.15);
+    color: #a855f7;
+}
+
+.iconred {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--color-error);
+}
+
+.icongreen {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--color-success);
+}
+
+.icongray {
+    background: var(--color-bg-elevated);
+    color: var(--color-text-secondary);
+}
+
+.insightMeta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.typeBadge {
+    text-transform: capitalize;
+    width: fit-content;
+}
+
+.confidence {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.confidenceBar {
+    flex: 1;
+    height: 6px;
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.confidenceFill {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary) 0%, #ff8555 100%);
+    border-radius: var(--radius-full);
+    transition: width var(--transition-slow);
+}
+
+.confidenceText {
+    font-size: 0.813rem;
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+}
+
+.insightTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+}
+
+.insightDescription {
+    font-size: 0.938rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.habitBadge {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    font-size: 0.813rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    width: fit-content;
+}
+
+.recommendation {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: rgba(255, 107, 53, 0.1);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    font-size: 0.938rem;
+    color: var(--color-text-primary);
+}
+
+.recommendation svg {
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.reasoning {
+    padding: var(--spacing-md);
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-md);
+}
+
+.reasoningTitle {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.reasoning ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.reasoning li {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    padding-left: var(--spacing-lg);
+    position: relative;
+}
+
+.reasoning li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.insightActions {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.predictionsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.predictionCard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.predictionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+}
+
+.habitName {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.riskBadge {
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.riskred {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--color-error);
+}
+
+.riskyellow {
+    background: rgba(234, 179, 8, 0.15);
+    color: #eab308;
+}
+
+.riskgreen {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--color-success);
+}
+
+.successProbability {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.probabilityLabel {
+    font-size: 0.813rem;
+    color: var(--color-text-tertiary);
+    white-space: nowrap;
+}
+
+.probabilityBar {
+    flex: 1;
+    height: 8px;
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.probabilityFill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-success) 0%, #10b981 100%);
+    border-radius: var(--radius-full);
+    transition: width var(--transition-slow);
+}
+
+.probabilityValue {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+}
+
+.predictionDetails {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.detailItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.detailItem svg {
+    color: var(--color-primary);
+}
+
+.predictionInsights {
+    padding: var(--spacing-md);
+    background: var(--color-bg-elevated);
+    border-radius: var(--radius-md);
+}
+
+.insightsTitle {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.predictionInsights ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.predictionInsights li {
+    font-size: 0.813rem;
+    color: var(--color-text-secondary);
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.predictionInsights li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+}
+
+.emptyState {
+    text-align: center;
+    padding: var(--spacing-2xl);
+}
+
+.emptyIcon {
+    font-size: 4rem;
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.emptyState h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.emptyState p {
+    font-size: 0.938rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .insightsGrid,
+    .predictionsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .insightActions {
+        flex-direction: column;
+    }
+
+    .insightActions button {
+        width: 100%;
+    }
+}

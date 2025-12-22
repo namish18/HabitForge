@@ -204,6 +204,32 @@ export interface AccountabilityInvitation {
     createdAt: string;
 }
 
+export interface AIInsight {
+    id: string;
+    type: 'timing' | 'stacking' | 'risk' | 'optimization';
+    habitId?: string;
+    title: string;
+    description: string;
+    confidence: number; // 0-100
+    recommendation: string;
+    reasoning: string[];
+    createdAt: string;
+    status: 'active' | 'accepted' | 'dismissed';
+}
+
+export interface HabitPrediction {
+    habitId: string;
+    riskLevel: 'low' | 'medium' | 'high';
+    successProbability: number; // 0-100
+    optimalTime: string;
+    stackingSuggestions: {
+        habitId: string;
+        reason: string;
+        confidence: number;
+    }[];
+    insights: string[];
+}
+
 export type FocusMode = 'pomodoro' | 'deep-work' | 'flow';
 
 export interface FocusSession {
@@ -259,4 +285,6 @@ export interface AppState {
     cosmetics: Cosmetic[];
     accountabilityPartners: AccountabilityPartner[];
     accountabilityInvitations: AccountabilityInvitation[];
+    aiInsights: AIInsight[];
+    habitPredictions: HabitPrediction[];
 }
